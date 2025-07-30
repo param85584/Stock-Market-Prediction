@@ -6,8 +6,10 @@ const options = {
   tlsInsecure: false,
   retryWrites: true,
   w: 'majority',
-  serverSelectionTimeoutMS: 30000,
-  connectTimeoutMS: 30000,
+  serverSelectionTimeoutMS: 10000,
+  connectTimeoutMS: 10000,
+  maxIdleTimeMS: 30000,
+  maxPoolSize: 10,
 };
 
 let client;
