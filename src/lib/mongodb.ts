@@ -1,11 +1,8 @@
-import { MongoClient } from "mongodb";
+import { MongoClient, MongoClientOptions } from "mongodb";
 
 const uri = process.env.MONGODB_URI!;
-const options = {
-  tls: true,
-  tlsInsecure: false,
+const options: MongoClientOptions = {
   retryWrites: true,
-  w: 'majority',
   serverSelectionTimeoutMS: 10000,
   connectTimeoutMS: 10000,
   maxIdleTimeMS: 30000,
