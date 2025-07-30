@@ -6,10 +6,7 @@ const options: MongoClientOptions = {
   serverSelectionTimeoutMS: 10000,
   connectTimeoutMS: 10000,
   maxIdleTimeMS: 30000,
-  maxPoolSize: 10,
-  ssl: true,
-  sslValidate: false,
-  authSource: 'admin'
+  maxPoolSize: 10
 };
 
 let client;
