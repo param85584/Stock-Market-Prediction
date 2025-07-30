@@ -1,7 +1,14 @@
 import { MongoClient } from "mongodb";
 
 const uri = process.env.MONGODB_URI!;
-const options = {};
+const options = {
+  tls: true,
+  tlsInsecure: false,
+  retryWrites: true,
+  w: 'majority',
+  serverSelectionTimeoutMS: 30000,
+  connectTimeoutMS: 30000,
+};
 
 let client;
 let clientPromise: Promise<MongoClient>;
